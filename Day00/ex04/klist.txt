@@ -1,0 +1,6 @@
+Credentials cache: API:64504
+        Principal: anluu@42.US.ORG
+
+  Issued                Expires               Principal
+Oct 21 18:24:37 2019  Oct 22 04:24:37 2019  krbtgt/42.US.ORG@42.US.ORG
+Oct 21 18:24:38 2019  Oct 22 04:24:37 2019  ldap/ldap-master.42.us.org@42.US.ORG
