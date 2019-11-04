@@ -1,0 +1,289 @@
+
+#include <stdio.h>
+#include <string.h>
+
+//
+
+char  *ft_strstr(char *str, char *tofind)
+{
+  int i;
+  i = 0;
+  while (*str != *tofind)
+  {
+     
+  }
+  
+  
+}
+
+
+
+
+int main () {
+   const char haystack[30] = "TutorialsPointaaa";
+   const char needle[20] = "Pointb";
+   char *ret;
+
+   ret = strstr(haystack, needle);
+
+   printf("The substring is: %s\n", ret);
+   
+   return(0);
+}
+
+
+EDIT
+
+
+#include <stdio.h>
+#include <string.h>
+
+
+int ft_strlen(char *str)
+{
+  int counter;
+  
+  counter = 1;
+  while(*str != '\0')
+  {
+    counter++; 
+  }
+  return (counter);
+}
+
+char  *ft_strstr(char *str, char *tofind)
+{
+  int hay_counter;
+  int needle_counter;
+  char result;
+  
+  hay_counter = 0;
+  needle_counter = 0;
+  while (*str != '\0')
+    {
+     if (str[hay_counter] == tofind[needle_counter]);
+      {
+        while (str[hay_counter] == tofind[needle_counter]);
+        {
+          
+          
+        }
+      }
+      hay_counter++;
+    }
+  return (null);
+  
+  while (str[i] != tofind[i])
+  {
+     
+  }
+  
+  
+}
+
+
+
+
+int main () {
+   const char haystack[30] = "TutorialsP'\0'ointaaa";
+   const char needle[20] = "";
+   char *ret;
+
+   ret = strstr(haystack, needle);
+
+   printf("The substring is: %s\n", ret);
+   
+   return(0);
+}
+
+
+
+EDIT 2
+
+#include <stdio.h>
+#include <string.h>
+
+char result(char *str, char *tofind, hay_count, needle_count)
+{
+  char *result;  
+  
+  while (str[hay_count] != '\0');
+  {
+    if (str[hay_count] != tofind[needle_count])
+        if (*tofind == '\0')
+        {
+          result[needle_count] = str[hay_count];
+          hay_count++;
+          needle_count++;
+        }
+        else
+            return (NULL);
+    else
+    {
+      result[needle_count] = str[hay_count];
+      hay_count++;
+      needle_count++;
+      tofind++;
+    }
+  }
+  return (result); 
+}
+
+char  *ft_strstr(char *str, char *tofind)
+{
+  int hay_count;
+  int needle_count;
+  
+  hay_count = 0;
+  needle_count = 0;
+  while (str[hay_count] != '\0')
+    {
+    if (str[hay_count] == tofind[needle_count]);
+      {
+        return(result(str, tofind, hay_count, needle_count));
+      }
+    else
+      hay_count++;
+    }
+  if 
+  return (NULL);
+}
+
+int main () {
+   const char haystack[30] = "TutorialsPointaaa ljh jbjmb";
+   const char needle[20] = "Point";
+   char *ret;
+
+   ret = strstr(haystack, needle);
+
+   printf("The substring is: %s\n", ret);
+   
+   return(0);
+}
+
+
+/*
+else if (tofind[needle_count])
+            {
+              while (str[hay_count] != '\0')
+              {
+                result[needle_count] = str[hay_count];
+                hay_count++;
+                needle_count++;
+              }
+            }
+
+*/
+
+
+/*
+int ft_strlen(char *str)
+{
+  int counter;
+  
+  counter = 0;
+  while(*str != '\0')
+  {
+    counter++;
+    str++;
+  }
+  return (counter);
+}
+*/
+
+EDIT Final** Forfeit (was told could be done in 5 lines.
+
+#include <stdio.h>
+#include <string.h>
+
+char result(char *str, char *tofind,int hay_count,int needle_count)
+{
+  char *result;  
+  
+  while (str[hay_count] != '\0');
+  {
+    if (str[hay_count] != tofind[needle_count])
+        if (*tofind == '\0')
+        {
+          result[needle_count] = str[hay_count];
+          hay_count++;
+          needle_count++;
+        }
+        else
+            return (NULL);
+    else
+    {
+      result[needle_count] = str[hay_count];
+      hay_count++;
+      needle_count++;
+      tofind++;
+    }
+  }
+  return (result); 
+}
+
+char  *ft_strstr(char *str, char *tofind)
+{
+  int hay_count;
+  int needle_count;
+  
+  hay_count = 0;
+  needle_count = 0;
+  while (str[hay_count] != '\0')
+    {
+    if (str[hay_count] == tofind[needle_count]);
+      {
+        return(result(str, tofind, hay_count, needle_count));
+      }
+      else
+      hay_count++;
+    }
+  return (NULL);
+}
+
+int main () {
+   const char haystack[30] = "TutorialsPointaaa ljh jbjmb";
+   const char needle[20] = "Point";
+   char *ret;
+   
+   const char haystack2[30] = "TutorialsPointaaa ljh jbjmb";
+   const char needle2[20] = "Point";
+   char *ret2;
+    
+   ret = strstr(haystack, needle);
+   ret2 = ft_strstr(haystack2, needle2);
+   
+   printf("The substring is: %s\n", ret);
+   printf("The substring is: %s\n", ret2);
+   return(0);
+}
+
+
+/*
+else if (tofind[needle_count])
+            {
+              while (str[hay_count] != '\0')
+              {
+                result[needle_count] = str[hay_count];
+                hay_count++;
+                needle_count++;
+              }
+            }
+
+*/
+
+
+/*
+int ft_strlen(char *str)
+{
+  int counter;
+  
+  counter = 0;
+  while(*str != '\0')
+  {
+    counter++;
+    str++;
+  }
+  return (counter);
+}
+*/
