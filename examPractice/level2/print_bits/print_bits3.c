@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   print_bits3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anluu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/12 16:17:13 by anluu             #+#    #+#             */
-/*   Updated: 2019/11/14 21:19:38 by anluu            ###   ########.fr       */
+/*   Created: 2019/11/14 21:20:06 by anluu             #+#    #+#             */
+/*   Updated: 2019/11/14 21:43:40 by anluu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_bits(unsigned char octet)
+void print_bits(unsigned char octet)
 {
-	int div = 128;
-	int num = octet;
+	int i; // represents the amount of bits
+	unsigned char bit;
 
-	while (div!= 0)
+	i = 8;
+	while (i--)
 	{
-		if (div <= num)
-		{
-			write (1, "1", 1);
-			num = num % div;
-		}
-		else
-			write (1, "0", 1);
-		div = div / 2;
+		bit = (octet >> i & 1) + '0';
+		write(1, &bit, 1);
 	}
 }
 
 int main ()
 {
-	print_bits(102);
+	print_bits(8);
 	return (0);
 }

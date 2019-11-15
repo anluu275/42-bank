@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   ft_strrev2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anluu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/12 16:17:13 by anluu             #+#    #+#             */
-/*   Updated: 2019/11/14 21:19:38 by anluu            ###   ########.fr       */
+/*   Created: 2019/11/14 16:01:40 by anluu             #+#    #+#             */
+/*   Updated: 2019/11/14 16:10:32 by anluu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	print_bits(unsigned char octet)
+int ft_strlen(char *str)
 {
-	int div = 128;
-	int num = octet;
+	int i;
 
-	while (div!= 0)
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char *ft_strrev(char *str)
+{
+	int	x;
+	int len;
+	char temp;
+
+	x = -1;
+	len = ft_strlen(str);
+	while (++x < --len)
 	{
-		if (div <= num)
-		{
-			write (1, "1", 1);
-			num = num % div;
-		}
-		else
-			write (1, "0", 1);
-		div = div / 2;
+		temp = str[x];
+		str[x] = str[len];
+		str[len] = temp;
 	}
+	return (str);
 }
 
 int main ()
 {
-	print_bits(102);
+	char str[] = "String";
+
+	printf("%s\n" , ft_strrev(str));
 	return (0);
 }

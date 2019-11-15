@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   reverse_bit5.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anluu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/12 16:17:13 by anluu             #+#    #+#             */
-/*   Updated: 2019/11/14 21:19:38 by anluu            ###   ########.fr       */
+/*   Created: 2019/11/14 22:41:57 by anluu             #+#    #+#             */
+/*   Updated: 2019/11/14 22:51:20 by anluu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	print_bits(unsigned char octet)
+unsigned char reverse_bits(unsigned char octet)
 {
-	int div = 128;
-	int num = octet;
+	int i = 8;
+	unsigned char res = 0;
 
-	while (div!= 0)
+	while (i > 0)
 	{
-		if (div <= num)
-		{
-			write (1, "1", 1);
-			num = num % div;
-		}
-		else
-			write (1, "0", 1);
-		div = div / 2;
+		res = res * 2 + (octet % 2);
+		octet = octet / 2;
+		i--;
 	}
+	return (res);
 }
 
 int main ()
 {
-	print_bits(102);
+	
+	printf("%d\n", reverse_bits(8));
+
 	return (0);
 }
